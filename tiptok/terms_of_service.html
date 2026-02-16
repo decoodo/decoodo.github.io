@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terms of Service | TipTok</title>
+    <style>
+        :root {
+            --bg: #0b0f17;
+            --card: rgba(255, 255, 255, 0.06);
+            --text: rgba(255, 255, 255, 0.92);
+            --muted: rgba(255, 255, 255, 0.70);
+            --border: rgba(255, 255, 255, 0.14);
+            --accent: #7c5cff;
+            --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+            --radius: 16px;
+            --maxw: 920px;
+            --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f6f7fb;
+                --card: #ffffff;
+                --text: #111827;
+                --muted: #4b5563;
+                --border: #e5e7eb;
+                --accent: #5b4bff;
+                --shadow: 0 10px 30px rgba(17, 24, 39, 0.10);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font);
+            background:
+                radial-gradient(1200px 600px at 15% 5%, rgba(124, 92, 255, 0.35), transparent 60%),
+                radial-gradient(900px 500px at 85% 15%, rgba(56, 189, 248, 0.20), transparent 55%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 40px 18px 64px;
+        }
+
+        header {
+            margin-bottom: 18px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 14px;
+            color: var(--muted);
+            backdrop-filter: blur(6px);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 5px rgba(124, 92, 255, 0.15);
+        }
+
+        h1 {
+            font-size: clamp(28px, 3.6vw, 42px);
+            line-height: 1.15;
+            margin: 14px 0 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 70ch;
+        }
+
+        .card {
+            margin-top: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .content {
+            padding: 22px 20px;
+        }
+
+        h2 {
+            margin: 22px 0 8px;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin: 0 0 12px;
+            color: var(--text);
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        ul {
+            margin: 0 0 12px 18px;
+            padding: 0;
+            color: var(--text);
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 18px;
+            padding: 14px 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .pill {
+            padding: 6px 10px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 16px;
+                font-size: 14px;
+            }
+        }
+
+        /* Print-friendly */
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+            }
+
+            .card {
+                box-shadow: none;
+            }
+
+            a {
+                color: #000;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/TipTok_playstore_logo.png" alt="TipTok Logo">
+                <span>TipTok</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy_policy_v2.html">Privacy Policy</a></li>
+                <li><a href="terms_of_service.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="wrap" aria-labelledby="page-title">
+        <header>
+            <span class="badge"><span class="dot" aria-hidden="true"></span> Legal • Terms</span>
+            <h1 id="page-title">Terms of Service</h1>
+            <p class="subtitle">
+                Please read these Terms of Service carefully before using the <strong>TipTok</strong> mobile
+                application.
+            </p>
+        </header>
+
+        <section class="card" aria-label="Terms of Service Content">
+            <div class="content">
+                <p>
+                    These Terms of Service ("Terms") govern your access to and use of the <strong>TipTok</strong> mobile
+                    application ("Application", "App", "Service") provided by TipTok ("we", "us", "our").
+                </p>
+
+                <p>
+                    By downloading, installing, or using the Application, you agree to be bound by these Terms. If you
+                    do not
+                    agree to these Terms, please do not use the Application.
+                </p>
+
+                <h2>1. Acceptance of Terms</h2>
+                <p>
+                    By accessing or using TipTok, you acknowledge that you have read, understood, and agree to be bound
+                    by these
+                    Terms and our <a href="privacy_policy_v2.html">Privacy Policy</a>. These Terms apply to all users of
+                    the
+                    Application.
+                </p>
+
+                <h2>2. Description of Service</h2>
+                <p>
+                    TipTok is a smart budget and expense tracking application that allows you to:
+                </p>
+                <ul>
+                    <li>Track your income and expenses</li>
+                    <li>Manage budgets and set financial goals</li>
+                    <li>Sync your financial data with Google Sheets</li>
+                    <li>Track debts, loans, and recurring transactions</li>
+                    <li>View financial insights and analytics</li>
+                </ul>
+                <p>
+                    The Service is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or
+                    implied.
+                </p>
+
+                <h2>3. User Accounts and Data</h2>
+                <p>
+                    <strong>Google Account Integration:</strong> To use TipTok's Google Sheets sync feature, you must
+                    authorize
+                    the Application to access your Google Drive. We only access the specific spreadsheets you choose for
+                    syncing
+                    your financial data.
+                </p>
+                <p>
+                    <strong>Data Ownership:</strong> You retain full ownership of all data you create or store within
+                    the
+                    Application. Your financial data is synced to your personal Google Sheets and remains under your
+                    control.
+                </p>
+                <p>
+                    <strong>Data Security:</strong> While we implement security measures to protect your data, you are
+                    responsible for maintaining the confidentiality of your Google Account credentials and for all
+                    activities
+                    that occur under your account.
+                </p>
+
+                <h2>4. User Responsibilities</h2>
+                <p>You agree to:</p>
+                <ul>
+                    <li>Provide accurate and complete information when using the Application</li>
+                    <li>Use the Application only for lawful purposes and in accordance with these Terms</li>
+                    <li>Not attempt to gain unauthorized access to any part of the Application or its related systems
+                    </li>
+                    <li>Not use the Application in any way that could damage, disable, or impair the Service</li>
+                    <li>Not reverse engineer, decompile, or disassemble the Application</li>
+                </ul>
+
+                <h2>5. Intellectual Property Rights</h2>
+                <p>
+                    The Application, including its original content, features, and functionality, is owned by TipTok and
+                    is
+                    protected by international copyright, trademark, patent, trade secret, and other intellectual
+                    property laws.
+                </p>
+                <p>
+                    You may not copy, modify, distribute, sell, or lease any part of our Application without our prior
+                    written
+                    consent.
+                </p>
+
+                <h2>6. Third-Party Services</h2>
+                <p>
+                    TipTok integrates with third-party services, including:
+                </p>
+                <ul>
+                    <li><strong>Google Sheets:</strong> For data synchronization and backup</li>
+                    <li><strong>Google AdMob:</strong> For displaying advertisements (in the ad-supported version)</li>
+                </ul>
+                <p>
+                    Your use of these third-party services is subject to their respective terms of service and privacy
+                    policies.
+                    We are not responsible for the content, privacy policies, or practices of any third-party services.
+                </p>
+
+                <h2>7. Advertisements</h2>
+                <p>
+                    The free version of TipTok is ad-supported. We use Google AdMob to display advertisements. You may
+                    opt for
+                    premium features to enjoy an ad-free experience. We reserve the right to modify or discontinue
+                    advertising at
+                    any time.
+                </p>
+
+                <h2>8. Premium Features and Payments</h2>
+                <p>
+                    TipTok may offer premium features or subscriptions for purchase. All purchases are processed through
+                    the
+                    Google Play Store and are subject to Google's payment terms and conditions.
+                </p>
+                <p>
+                    Premium features may include ad-free experience, enhanced themes, and priority support. We reserve
+                    the right
+                    to modify, suspend, or discontinue any premium features at any time.
+                </p>
+
+                <h2>9. Disclaimers and Limitations of Liability</h2>
+                <p>
+                    <strong>No Financial Advice:</strong> TipTok is a tool for tracking and organizing your finances. It
+                    does not
+                    provide financial, investment, tax, or legal advice. You should consult with qualified professionals
+                    before
+                    making financial decisions.
+                </p>
+                <p>
+                    <strong>Accuracy:</strong> While we strive to provide accurate calculations and data
+                    synchronization, we do
+                    not guarantee that the Application will be error-free or uninterrupted. You are responsible for
+                    verifying the
+                    accuracy of your financial data.
+                </p>
+                <p>
+                    <strong>Limitation of Liability:</strong> To the maximum extent permitted by law, TipTok and its
+                    affiliates
+                    shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or
+                    any loss of
+                    profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or
+                    other
+                    intangible losses resulting from:
+                </p>
+                <ul>
+                    <li>Your use or inability to use the Application</li>
+                    <li>Any unauthorized access to or use of your data</li>
+                    <li>Any errors, mistakes, or inaccuracies in the Application</li>
+                    <li>Any interruption or cessation of the Service</li>
+                </ul>
+
+                <h2>10. Indemnification</h2>
+                <p>
+                    You agree to indemnify, defend, and hold harmless TipTok and its officers, directors, employees, and
+                    agents
+                    from any claims, liabilities, damages, losses, and expenses, including legal fees, arising out of or
+                    in any
+                    way connected with your access to or use of the Application or your violation of these Terms.
+                </p>
+
+                <h2>11. Termination</h2>
+                <p>
+                    We reserve the right to suspend or terminate your access to the Application at any time, with or
+                    without
+                    notice, for any reason, including if we believe you have violated these Terms.
+                </p>
+                <p>
+                    You may stop using the Application at any time by uninstalling it from your device. Upon
+                    termination, your
+                    data stored in Google Sheets will remain in your Google Drive, but you will no longer be able to
+                    sync it with
+                    the Application.
+                </p>
+
+                <h2>12. Changes to Terms</h2>
+                <p>
+                    We reserve the right to modify or replace these Terms at any time. We will notify you of significant
+                    changes
+                    by updating the date at the bottom of these Terms or through the Application. Your continued use of
+                    the
+                    Application after any changes constitutes acceptance of the new Terms.
+                </p>
+
+                <h2>13. Governing Law</h2>
+                <p>
+                    These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in
+                    which
+                    TipTok operates, without regard to its conflict of law provisions.
+                </p>
+
+                <h2>14. Contact Us</h2>
+                <p>
+                    If you have any questions about these Terms of Service, please contact us at:
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:decodoinfo@gmail.com">decodoinfo@gmail.com</a>
+                </p>
+
+                <h2>15. Severability</h2>
+                <p>
+                    If any provision of these Terms is found to be unenforceable or invalid, that provision will be
+                    limited or
+                    eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force
+                    and effect.
+                </p>
+
+                <h2>16. Entire Agreement</h2>
+                <p>
+                    These Terms, together with our Privacy Policy, constitute the entire agreement between you and
+                    TipTok
+                    regarding the use of the Application and supersede all prior agreements and understandings.
+                </p>
+
+            </div>
+
+            <div class="footer" aria-label="Terms Metadata">
+                <span class="pill">App: TipTok</span>
+                <span class="pill">Last updated: 2026-02-16</span>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

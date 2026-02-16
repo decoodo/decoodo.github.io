@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="TipTok: Smart Budget & Expense Tracker - Take control of your finances with the smart, secure, and simple way to track expenses, manage budgets, and crush debt." />
+    <meta name="keywords"
+        content="TipTok, expense tracker, budget, finance, money management, debt tracker, savings goals" />
+    <title>TipTok: Smart Budget & Expense Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0f17;
+            --card: rgba(255, 255, 255, 0.06);
+            --text: rgba(255, 255, 255, 0.92);
+            --muted: rgba(255, 255, 255, 0.70);
+            --border: rgba(255, 255, 255, 0.14);
+            --accent: #7c5cff;
+            --accent-bright: #9d7fff;
+            --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+            --radius: 16px;
+            --maxw: 1200px;
+            --font: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f6f7fb;
+                --card: #ffffff;
+                --text: #111827;
+                --muted: #4b5563;
+                --border: #e5e7eb;
+                --accent: #5b4bff;
+                --accent-bright: #7c5cff;
+                --shadow: 0 10px 30px rgba(17, 24, 39, 0.10);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+        }
+
+        body {
+            font-family: var(--font);
+            background:
+                radial-gradient(1200px 600px at 15% 5%, rgba(124, 92, 255, 0.35), transparent 60%),
+                radial-gradient(900px 500px at 85% 15%, rgba(56, 189, 248, 0.20), transparent 55%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-content {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 80px 24px 60px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 14px;
+            color: var(--muted);
+            backdrop-filter: blur(6px);
+            margin-bottom: 24px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 5px rgba(124, 92, 255, 0.15);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent-bright) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 0.8s ease 0.2s backwards;
+        }
+
+        .subtitle {
+            font-size: clamp(18px, 2vw, 22px);
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeIn 1s ease 0.4s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1.2s ease 0.6s backwards;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-bright) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(124, 92, 255, 0.45);
+        }
+
+        .play-badge {
+            height: 52px;
+            transition: transform 0.3s ease;
+        }
+
+        .play-badge:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            margin: 60px auto 0;
+            max-width: 300px;
+            animation: fadeIn 1.4s ease 0.8s backwards;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 50px rgba(124, 92, 255, 0.4));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Features Section */
+        .features {
+            max-width: var(--maxw);
+            margin: 80px auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 38px);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-desc {
+            color: var(--muted);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            max-width: var(--maxw);
+            margin: 80px auto;
+            padding: 0 24px;
+        }
+
+        .reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .reason {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            display: flex;
+            align-items: start;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .reason:hover {
+            transform: translateX(4px);
+            border-color: var(--accent);
+        }
+
+        .checkmark {
+            font-size: 24px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .reason-text {
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            border-top: 1px solid var(--border);
+            background: rgba(11, 15, 23, 0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-content {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-text {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 16px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-grid,
+            .reasons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/TipTok_playstore_logo.png" alt="TipTok Logo">
+                <span>TipTok</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy_policy_v2.html">Privacy Policy</a></li>
+                <li><a href="terms_of_service.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge">
+            <span class="dot" aria-hidden="true"></span>
+            Smart Budget & Expense Tracker
+        </div>
+        <h1>Take Control of Your Finances with TipTok</h1>
+        <p class="subtitle">
+            The smart, secure, and simple way to track expenses, manage budgets, and crush debt.
+            Sync with Google Sheets for 100% data ownership.
+        </p>
+        <div class="cta-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.tip.tok" class="btn-primary" target="_blank"
+                rel="noopener">
+                <span>📱</span>
+                Download Now
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.tip.tok" target="_blank" rel="noopener">
+                <img src="assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play"
+                    class="play-badge">
+            </a>
+        </div>
+        <div class="hero-image">
+            <img src="assets/TipTok_playstore_logo.png" alt="TipTok App">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2 class="section-title">🚀 Powerful Features</h2>
+            <p class="section-desc">Everything you need to manage your money like a pro</p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Google Sheets Sync</h3>
+                <p class="feature-desc">Your data, your rules. Auto-sync every transaction to your personal Google
+                    Sheet. 100% data ownership, forever.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 class="feature-title">Smart Budgeting</h3>
+                <p class="feature-desc">Set monthly or custom limits for categories. Visual progress bars show exactly
+                    how much you have left to spend.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💸</div>
+                <h3 class="feature-title">Debt & Loan Manager</h3>
+                <p class="feature-desc">Track who owes you and what you owe. Record debts with friends and mark
+                    repayments easily.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3 class="feature-title">Recurring Transactions</h3>
+                <p class="feature-desc">Set up recurring income and expenses. TipTok adds them automatically so your
+                    balance is always accurate.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Savings Goals</h3>
+                <p class="feature-desc">Create visual savings pots for vacations, gadgets, or emergencies. Track
+                    progress and celebrate milestones.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3 class="feature-title">Beautiful Insights</h3>
+                <p class="feature-desc">Understand spending habits at a glance. Category breakdown and monthly trends
+                    with a clean, modern interface.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="section-header">
+            <h2 class="section-title">Why Choose TipTok?</h2>
+            <p class="section-desc">Built with privacy, simplicity, and your success in mind</p>
+        </div>
+        <div class="reasons">
+            <div class="reason">
+                <span class="checkmark">✅</span>
+                <span class="reason-text"><strong>Privacy First:</strong> We don't sell your data. It stays in your
+                    Google Drive.</span>
+            </div>
+            <div class="reason">
+                <span class="checkmark">✅</span>
+                <span class="reason-text"><strong>User Friendly:</strong> Designed for speed. Add a transaction in
+                    seconds.</span>
+            </div>
+            <div class="reason">
+                <span class="checkmark">✅</span>
+                <span class="reason-text"><strong>Flexible:</strong> Works for students, freelancers, and
+                    families.</span>
+            </div>
+            <div class="reason">
+                <span class="checkmark">✅</span>
+                <span class="reason-text"><strong>Ad-Free Options:</strong> Enjoy a focused, distraction-free
+                    environment.</span>
+            </div>
+            <div class="reason">
+                <span class="checkmark">✅</span>
+                <span class="reason-text"><strong>Auto-Backup:</strong> Weekly effortless cloud syncs for peace of
+                    mind.</span>
+            </div>
+            <div class="reason">
+                <span class="checkmark">✅</span>
+                <span class="reason-text"><strong>Premium Themes:</strong> Customize with beautiful themes like Fintech
+                    Indigo or Classic Dark.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy_policy_v2.html">Privacy Policy</a></li>
+                <li><a href="terms_of_service.html">Terms of Service</a></li>
+                <li><a href="mailto:decodoinfo@gmail.com">Contact</a></li>
+            </ul>
+            <p class="footer-text">© 2026 TipTok. All rights reserved.</p>
+            <p class="footer-text" style="margin-top: 8px;">Download TipTok today and start building a healthier
+                financial future!</p>
+        </div>
+    </footer>
+</body>
+
+</html>
