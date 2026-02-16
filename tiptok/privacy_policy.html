@@ -183,10 +183,109 @@
         text-decoration: underline;
       }
     }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 15, 23, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .logo:hover {
+      transform: translateY(-2px);
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 16px;
+        font-size: 14px;
+      }
+    }
+
+    /* Print-friendly */
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .card {
+        box-shadow: none;
+      }
+
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-content">
+      <a href="index.html" class="logo">
+        <img src="assets/TipTok_playstore_logo.png" alt="TipTok Logo">
+        <span>TipTok</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy_policy_v2.html">Privacy Policy</a></li>
+        <li><a href="terms_of_service.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <main class="wrap" aria-labelledby="page-title">
     <header>
       <span class="badge"><span class="dot" aria-hidden="true"></span> Legal • Privacy</span>
