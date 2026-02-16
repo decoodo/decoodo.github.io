@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="NeuraLab AI - Professional visual intelligence suite for resellers, content creators, and designers. 6 powerful AI modes in one app.">
+    <title>NeuraLab AI - Visual Intelligence Suite</title>
+    <link rel="icon" type="image/png" href="assets/NeuraLab_AI_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: hsl(260, 95%, 65%);
+            --primary-dark: hsl(260, 95%, 55%);
+            --secondary: hsl(190, 90%, 55%);
+            --accent: hsl(320, 85%, 60%);
+            --bg-dark: hsl(240, 15%, 8%);
+            --bg-card: hsl(240, 12%, 12%);
+            --text-light: hsl(0, 0%, 95%);
+            --text-muted: hsl(0, 0%, 65%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg,
+                    hsl(260, 95%, 15%) 0%,
+                    hsl(240, 95%, 8%) 50%,
+                    hsl(280, 95%, 12%) 100%);
+            z-index: -2;
+        }
+
+        .bg-gradient::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 50%, hsla(260, 95%, 65%, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, hsla(190, 90%, 55%, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, hsla(320, 85%, 60%, 0.1) 0%, transparent 50%);
+            animation: morphing 20s ease-in-out infinite;
+        }
+
+        @keyframes morphing {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(-5%, -5%) scale(1.1);
+            }
+
+            66% {
+                transform: translate(5%, 5%) scale(0.9);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(15, 15, 25, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            filter: drop-shadow(0 0 10px rgba(138, 92, 246, 0.5));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-light);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg,
+                    var(--primary) 0%,
+                    var(--secondary) 50%,
+                    var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 10px 30px rgba(138, 92, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(138, 92, 246, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .play-badge {
+            max-width: 180px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .play-badge:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(138, 92, 246, 0.1), rgba(45, 212, 191, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(138, 92, 246, 0.3);
+            box-shadow: 0 20px 60px rgba(138, 92, 246, 0.2);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features {
+                padding: 4rem 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="assets/NeuraLab_AI_logo.png" alt="NeuraLab AI Logo">
+            <span>NeuraLab AI</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="privacy_policy.html">Privacy</a></li>
+            <li><a href="terms_of_service.html">Terms</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Visual Intelligence Suite</h1>
+        <p class="tagline">
+            Unlock the hidden potential in every photo. Professional AI-powered analysis for resellers, content
+            creators, daters, and designers.
+        </p>
+        <div class="cta-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.neuralab.ai" target="_blank"
+                class="btn btn-primary">
+                Download Now
+            </a>
+            <a href="#features" class="btn btn-secondary">
+                Explore Features
+            </a>
+        </div>
+        <div style="margin-top: 2rem;">
+            <a href="https://play.google.com/store/apps/details?id=com.neuralab.ai" target="_blank">
+                <img src="assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play"
+                    class="play-badge">
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>6 Powerful AI Modes</h2>
+            <p>Everything you need in one intelligent app</p>
+        </div>
+
+        <div class="features-grid">
+            <!-- Feature 1: SELL IT -->
+            <div class="feature-card reveal">
+                <span class="feature-icon">💰</span>
+                <h3>SELL IT</h3>
+                <p>
+                    Turn clutter into cash on eBay, Amazon, and Depop. Get instant professional listings with
+                    SEO-optimized descriptions,
+                    market value estimates (Low, Average, High), and high-ranking titles that help your items sell
+                    faster.
+                </p>
+            </div>
+
+            <!-- Feature 2: RATE ME -->
+            <div class="feature-card reveal">
+                <span class="feature-icon">⭐</span>
+                <h3>RATE ME</h3>
+                <p>
+                    AI Dating Coach that gives you honest attractiveness scores and aura ratings. Get specific advice on
+                    lighting,
+                    angles, and cropping to improve your dating profile. Plus, AI-generated icebreakers tailored to your
+                    vibe.
+                </p>
+            </div>
+
+            <!-- Feature 3: YOUTUBE -->
+            <div class="feature-card reveal">
+                <span class="feature-icon">📹</span>
+                <h3>YOUTUBE</h3>
+                <p>
+                    Dominate the algorithm before you upload. Analyze your thumbnail concept to predict Click-Through
+                    Rate,
+                    get 15-second viral hook scripts, and generate high-ranking SEO tags and click-worthy titles.
+                </p>
+            </div>
+
+            <!-- Feature 4: THE LAB -->
+            <div class="feature-card reveal">
+                <span class="feature-icon">🧪</span>
+                <h3>THE LAB</h3>
+                <p>
+                    Visual DNA for designers and AI artists. Reverse-engineer any image into text prompts compatible
+                    with
+                    Midjourney, DALL-E, and Stable Diffusion. Extract exact Hex codes and professional color palettes.
+                </p>
+            </div>
+
+            <!-- Feature 5: THE SCRIBE -->
+            <div class="feature-card reveal">
+                <span class="feature-icon">✍️</span>
+                <h3>THE SCRIBE</h3>
+                <p>
+                    Digitize the physical world. Instantly convert handwritten notes or book pages into digital text.
+                    AI automatically fixes grammar, typos, and sentence structure for professional results.
+                </p>
+            </div>
+
+            <!-- Feature 6: IDENTIFY -->
+            <div class="feature-card reveal">
+                <span class="feature-icon">🔍</span>
+                <h3>IDENTIFY</h3>
+                <p>
+                    Visual Encyclopedia at your fingertips. Instantly identify plants, celebrities, landmarks, and
+                    gadgets.
+                    Get detailed Wikipedia-style bios and stats about anything you scan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="terms_of_service.html">Terms of Service</a>
+            <a href="https://play.google.com/store/apps/details?id=com.neuralab.ai" target="_blank">Download App</a>
+            <a href="#" id="contact-link">Contact Us</a>
+        </div>
+        <p class="copyright">&copy; 2026 NeuraLab AI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Anti-spam email obfuscation
+        (function () {
+            const user = 'decodoinfo';
+            const domain = 'gmail' + '.' + 'com';
+            const email = user + '@' + domain;
+            const contactLink = document.getElementById('contact-link');
+            if (contactLink) {
+                contactLink.href = 'mailto:' + email;
+                contactLink.setAttribute('data-email', email);
+            }
+        })();
+
+        // Smooth scroll
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+
+        function checkReveal() {
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 100;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        checkReveal(); // Initial check
+    </script>
+</body>
+
+</html>
