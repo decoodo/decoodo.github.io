@@ -1,0 +1,23 @@
+{
+  "name": "Decoodo | Smart Web Solutions",
+  "short_name": "Decoodo",
+  "description": "Crafting future-ready digital experiences with precision and passion.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#070708",
+  "theme_color": "#070708",
+  "icons": [
+    {
+      "src": "assets/imgs/logo_decoodo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/imgs/logo_decoodo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

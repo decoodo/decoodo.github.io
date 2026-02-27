@@ -5,49 +5,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="FlKxXLu3cvHEh9TIlRvws3y8lNzeTz9MFnik5FyYaHQ" />
+    <meta name="description"
+        content="Decoodo - Crafting the future of premium web experiences. Explore our high-performance AI integration, budgeting tools, and HD wallpapers.">
+    <meta name="keywords"
+        content="Decoodo, Web Development, AI Integration, Budgeting Tool, TipTok, Neuralab AI, Wall Pix, Premium Web Design">
+    <meta name="author" content="Decoodo">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://decoodo.github.io/">
+    <meta property="og:title" content="Decoodo | Premium Web Experiences">
+    <meta property="og:description"
+        content="Stunning design meets high-performance web applications. Explore Neuralab AI, TipTok, and Wall Pix.">
+    <meta property="og:image" content="assets/imgs/premium_abstract_bg.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://decoodo.github.io/">
+    <meta property="twitter:title" content="Decoodo | Premium Web Experiences">
+    <meta property="twitter:description"
+        content="Stunning design meets high-performance web applications. Explore Neuralab AI, TipTok, and Wall Pix.">
+    <meta property="twitter:image" content="assets/imgs/premium_abstract_bg.png">
+
     <title>Decoodo | Smart Web Solutions</title>
+    <link rel="icon" type="image/png" href="assets/imgs/logo_decoodo.png">
+    <link rel="apple-touch-icon" href="assets/imgs/logo_decoodo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#070708">
 </head>
 
 <body>
+    <div class="cursor-glow"></div>
     <nav>
-        <div class="logo">Decoodo</div>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="https://github.com/decoodo" target="_blank">GitHub</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/imgs/logo_decoodo.png" alt="Decoodo Logo"
+                        style="height: 32px; vertical-align: middle; margin-right: 10px;">
+                    <span>Decoodo</span>
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#projects">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://github.com/decoodo" target="_blank" class="nav-btn github-nav">
+                        <span>GitHub</span>
+                    </a></li>
+            </ul>
+        </div>
     </nav>
 
     <header class="hero" id="hero">
-        <h1>Crafting the Future <br> of Web Experiences</h1>
-        <p>We build high-performance, premium web applications with a focus on stunning design and seamless user
-            experience.</p>
-        <a href="#features" class="btn">Explore Our Work</a>
+        <div class="hero-content">
+            <span class="badge" data-aos="fade-up">Next-Gen Development</span>
+            <h1 data-aos="fade-up" data-aos-delay="100">Elevate Your <br> <span class="accent-text">Digital
+                    Presence</span></h1>
+            <p data-aos="fade-up" data-aos-delay="200">Decoodo crafts future-ready digital experiences with precision,
+                passion, and a focus on
+                premium quality.</p>
+            <div class="hero-btns" data-aos="fade-up" data-aos-delay="300">
+                <a href="#projects" class="btn">Explore Our Work</a>
+                <a href="https://play.google.com/store/apps/developer?id=Decodo" target="_blank"
+                    class="btn btn-outline playstore-btn">
+                    <span>Play Store</span>
+                </a>
+            </div>
+        </div>
     </header>
 
-    <main class="features" id="features">
-        <div class="card">
-            <h3>Neuralab AI</h3>
-            <p>Advanced AI integration for modern enterprises. Futuristic design meets powerful performance.</p>
+    <section class="projects" id="projects">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Featured Projects</h2>
+            <p>A showcase of our latest digital products and innovations.</p>
         </div>
-        <div class="card">
-            <h3>TipTok</h3>
-            <p>The ultimate budgeting and expense tracking tool. Clean, vibrant, and incredibly user-friendly.</p>
+
+        <div class="project-grid">
+            <!-- Neuralab AI -->
+            <a href="neuralab_ai/index.html" class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="neuralab_ai/assets/NeuraLab_AI_logo.png" alt="Neuralab AI">
+                </div>
+                <div class="project-info">
+                    <h3>Neuralab AI</h3>
+                    <p>Advanced AI integration for modern enterprises. Futuristic design meets powerful performance.</p>
+                    <span class="project-link">View Project →</span>
+                </div>
+            </a>
+
+            <!-- TipTok -->
+            <a href="tiptok/index.html" class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="tiptok/assets/TipTok_playstore_logo.png" alt="TipTok">
+                </div>
+                <div class="project-info">
+                    <h3>TipTok</h3>
+                    <p>The ultimate budgeting and expense tracking tool. Clean, vibrant, and incredibly user-friendly.
+                    </p>
+                    <span class="project-link">View Project →</span>
+                </div>
+            </a>
+
+            <!-- Wall Pix -->
+            <a href="wall_pix/index.html" class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="wall_pix/assets/wall_pix_logo.png" alt="Wall Pix">
+                </div>
+                <div class="project-info">
+                    <h3>Wall Pix</h3>
+                    <p>2000+ stunning HD wallpapers. A minimalist showcase of visual excellence for your devices.</p>
+                    <span class="project-link">View Project →</span>
+                </div>
+            </a>
         </div>
-        <div class="card">
-            <h3>Wall Pix</h3>
-            <p>2000+ stunning HD wallpapers. A minimalist showcase of visual excellence for your devices.</p>
+    </section>
+
+    <section class="github-section" data-aos="fade-up">
+        <div class="github-card">
+            <div class="github-content">
+                <h2>Join our Open Source Journey</h2>
+                <p>Check out our repositories, contribute to our projects, and see what we're building next on GitHub.
+                </p>
+                <a href="https://github.com/decoodo" target="_blank" class="btn">
+                    Follow @decoodo
+                </a>
+            </div>
+            <div class="github-image">
+                <div class="github-visual-new">
+                    <img src="assets/imgs/GitHub_Lockup_White.png" alt="GitHub Logo" class="github-lockup">
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
 
     <footer>
-        <p>&copy; 2026 Decoodo. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/imgs/logo_decoodo.png" alt="Decoodo Logo"
+                    style="height: 24px; vertical-align: middle; margin-right: 8px; filter: grayscale(1) invert(1);">
+                <span>Decoodo</span>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy_policy.html">Privacy Policy</a>
+                <a href="terms_of_service.html">Terms of Service</a>
+                <a href="https://play.google.com/store/apps/developer?id=Decodo" target="_blank">Google Play</a>
+                <a href="https://github.com/decoodo" target="_blank">GitHub</a>
+            </div>
+            <p>&copy; 2026 Decoodo. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 
 </html>
