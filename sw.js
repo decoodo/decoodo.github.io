@@ -1,4 +1,4 @@
-const CACHE_NAME = 'decoodo-v1';
+const CACHE_NAME = 'decodo-v1';
 const ASSETS = [
     '/',
     '/index.html',
@@ -8,7 +8,7 @@ const ASSETS = [
     '/terms_of_service.html',
     '/assets/css/style.css',
     '/assets/js/script.js',
-    '/assets/imgs/logo_decoodo.png'
+    '/assets/imgs/logo_decodo.png'
 ];
 
 self.addEventListener('install', event => {

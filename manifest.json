@@ -1,6 +1,6 @@
 {
-  "name": "Decoodo | Smart Web Solutions",
-  "short_name": "Decoodo",
+  "name": "Decodo | Smart Web Solutions",
+  "short_name": "Decodo",
   "description": "Crafting future-ready digital experiences with precision and passion.",
   "start_url": "/index.html",
   "display": "standalone",
@@ -8,13 +8,13 @@
   "theme_color": "#070708",
   "icons": [
     {
-      "src": "assets/imgs/logo_decoodo.png",
+      "src": "assets/imgs/logo_decodo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "assets/imgs/logo_decoodo.png",
+      "src": "assets/imgs/logo_decodo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
