@@ -4,292 +4,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="assets/TipTok_playstore_logo.png" />
-  <link rel="apple-touch-icon" href="assets/TipTok_playstore_logo.png" />
+  <meta name="description"
+    content="Privacy Policy for TipTok. Learn what data TipTok stores on your device, how optional Google Sheets sync works, and how to delete your data." />
+  <meta name="robots" content="index,follow" />
+  <meta name="application-name" content="TipTok" />
+  <meta name="theme-color" content="#0b0f17" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <meta property="og:title" content="Privacy Policy | TipTok" />
+  <meta property="og:description"
+    content="TipTok is local-first. Google Sheets sync is optional. Read retention and deletion details here." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TipTok" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="assets/imgs/TipTok_playstore_logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="assets/imgs/TipTok_playstore_logo.png" />
+  <meta name="author" content="TipTok" />
+
+  <link rel="icon" type="image/png" href="assets/imgs/TipTok_playstore_logo.png" />
+  <link rel="apple-touch-icon" href="assets/imgs/TipTok_playstore_logo.png" />
   <title>Privacy Policy | TipTok</title>
-  <style>
-    :root {
-      --bg: #0b0f17;
-      --card: rgba(255, 255, 255, 0.06);
-      --text: rgba(255, 255, 255, 0.92);
-      --muted: rgba(255, 255, 255, 0.70);
-      --border: rgba(255, 255, 255, 0.14);
-      --accent: #7c5cff;
-      --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
-      --radius: 16px;
-      --maxw: 920px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    }
 
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f6f7fb;
-        --card: #ffffff;
-        --text: #111827;
-        --muted: #4b5563;
-        --border: #e5e7eb;
-        --accent: #5b4bff;
-        --shadow: 0 10px 30px rgba(17, 24, 39, 0.10);
-      }
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      min-height: 100%;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font);
-      background:
-        radial-gradient(1200px 600px at 15% 5%, rgba(124, 92, 255, 0.35), transparent 60%),
-        radial-gradient(900px 500px at 85% 15%, rgba(56, 189, 248, 0.20), transparent 55%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 40px 18px 64px;
-    }
-
-    header {
-      margin-bottom: 18px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
-      font-size: 14px;
-      color: var(--muted);
-      backdrop-filter: blur(6px);
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(124, 92, 255, 0.15);
-    }
-
-    h1 {
-      font-size: clamp(28px, 3.6vw, 42px);
-      line-height: 1.15;
-      margin: 14px 0 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .subtitle {
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 70ch;
-    }
-
-    .card {
-      margin-top: 20px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .content {
-      padding: 22px 20px;
-    }
-
-    h2 {
-      margin: 22px 0 8px;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-    }
-
-    h2:first-child {
-      margin-top: 0;
-    }
-
-    p {
-      margin: 0 0 12px;
-      color: var(--text);
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    ul {
-      margin: 0 0 12px 18px;
-      padding: 0;
-      color: var(--text);
-    }
-
-    li {
-      margin: 6px 0;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .footer {
-      margin-top: 18px;
-      padding: 14px 20px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 18px;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .pill {
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    /* Print-friendly */
-    @media print {
-      body {
-        background: #fff;
-        color: #000;
-      }
-
-      .card {
-        box-shadow: none;
-      }
-
-      a {
-        color: #000;
-        text-decoration: underline;
-      }
-    }
-
-    /* Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(11, 15, 23, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-      transition: transform 0.2s ease;
-    }
-
-    .logo:hover {
-      transform: translateY(-2px);
-    }
-
-    .logo img {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        gap: 16px;
-        font-size: 14px;
-      }
-    }
-
-    /* Print-friendly */
-    @media print {
-      body {
-        background: #fff;
-        color: #000;
-      }
-
-      .card {
-        box-shadow: none;
-      }
-
-      a {
-        color: #000;
-        text-decoration: underline;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/script.js"></script>
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
     <div class="nav-content">
-      <a href="index.html" class="logo">
-        <img src="assets/TipTok_playstore_logo.png" alt="TipTok Logo">
+      <a href="index.html" class="logo" aria-label="TipTok Home">
+        <img src="assets/imgs/TipTok_playstore_logo.png" alt="TipTok Logo" width="36" height="36">
         <span>TipTok</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="privacy_policy.html">Privacy Policy</a></li>
         <li><a href="terms_of_service.html">Terms of Service</a></li>
+        <li><a href="mailto:decodoinfo@gmail.com">Support</a></li>
       </ul>
     </div>
   </nav>
 
-  <main class="wrap" aria-labelledby="page-title">
-    <header>
+  <main id="main" class="wrap wrap--narrow" aria-labelledby="page-title">
+    <header class="page-header">
       <span class="badge"><span class="dot" aria-hidden="true"></span> Legal • Privacy</span>
       <h1 id="page-title">Privacy Policy</h1>
       <p class="subtitle">
@@ -301,96 +63,208 @@
     <section class="card" aria-label="Privacy Policy Content">
       <div class="content">
         <p>
-          This privacy policy applies to the <strong>TipTok</strong> app (hereby referred to as the "Application") for
-          mobile devices
-          that was created by TipTok (hereby referred to as the "Service Provider") as an ad-supported service.
-          This service is intended for use "AS IS".
+          This Privacy Policy applies to the <strong>TipTok</strong> mobile application (the “Application”) provided by
+          TipTok (the “Service Provider”). TipTok is designed to work primarily on your device. We do not operate a
+          backend server that stores your budgets, transactions, or Google Sheets content.
         </p>
 
-        <h2>What information does the Application obtain and how is it used?</h2>
+        <h2>Information you enter and store in the Application</h2>
         <p>
-          <strong>User Data (Google Sheets):</strong><br>
-          The Application allows you to sync your financial data with your personal Google Sheets. The Application
-          accesses this data <strong>only</strong> to display it within the app and to update your spreadsheet with new
-          transactions.
-          This data remains in your Google Drive and is <strong>never</strong> sent to the Service Provider's servers.
-          We have no access to your spreadsheet data outside of the Application running on your device.
-        </p>
-        <p>
-          <strong>AdMob (Advertising):</strong><br>
-          We use Google AdMob to display advertisements. AdMob may collect and use personal data (such as your
-          Advertising ID,
-          device information, and usage data) to provide personalized ads.
+          TipTok lets you create and manage personal finance data such as transactions (income/expenses), budgets,
+          savings goals, debts, subscription/recurring items, upcoming income, categories, and tip-calculator history.
+          This information is stored locally on your device (for example, in the Application’s local storage).
         </p>
 
-        <h2>Does the Application collect precise real-time location information of the device?</h2>
+        <h2>Google Account, Google Drive, and Google Sheets (optional sync)</h2>
         <p>
-          This Application does not collect precise information about the location of your mobile device.
+          TipTok can optionally sync your data to a Google Spreadsheet in your Google Account. When you connect a Google
+          Account, the Application uses Google Sign-In to obtain an OAuth access token and basic profile information
+          (such as your name, email address, and profile photo) to show your connection status in the app.
+        </p>
+        <p>
+          When syncing is enabled, TipTok reads and writes the Google Spreadsheet you choose (or create) to keep your
+          data in sync. TipTok stores the spreadsheet ID you configure on your device so it knows where to sync. Your
+          spreadsheet content stays in your Google Account. TipTok does not upload your spreadsheet content to Service
+          Provider servers.
+        </p>
+
+        <h2>Google API scopes we request</h2>
+        <p>
+          To provide the Google Sheets sync feature, TipTok requests the following Google API scopes:
+        </p>
+        <ul>
+          <!-- <li>
+            <code>https://www.googleapis.com/auth/drive.file</code> — create and access the spreadsheet file(s) that you
+            create or explicitly open/select for TipTok.
+          </li> -->
+          <li>
+            <code>https://www.googleapis.com/auth/spreadsheets</code> — read and write spreadsheet content for syncing
+            (for example: transactions, budgets, savings goals, subscription items, upcoming items, categories, and
+            debts) in the spreadsheet you configure in TipTok.
+          </li>
+        </ul>
+        <p class="muted">
+          TipTok requests only the minimum scopes needed for the sync features you enable. TipTok does not request broad
+          Google Drive scopes such as <code>https://www.googleapis.com/auth/drive</code> or
+          <code>https://www.googleapis.com/auth/drive.readonly</code>.
+        </p>
+        <p class="muted">
+          Note: The Sheets scope allows access to Google Sheets in your account. TipTok is designed to use this access
+          only for the specific spreadsheet you choose or create for TipTok.
+        </p>
+
+        <h2>Google API data use (Limited Use)</h2>
+        <p>
+          TipTok’s use and transfer of information received from Google APIs will adhere to the Google API Services User
+          Data Policy, including the Limited Use requirements. We use Google user data only to provide the in-app sync
+          features you request and do not use Google user data for advertising or marketing.
+        </p>
+
+        <h2>Advertising (Google AdMob)</h2>
+        <p>
+          TipTok uses Google AdMob to display advertisements in the ad-supported version of the Application. AdMob may
+          collect and use information (such as Advertising ID, IP address, device information, and app interaction data)
+          to provide and measure ads, including personalized ads where permitted.
+        </p>
+
+        <h2>Notifications</h2>
+        <p>
+          If you enable reminders (for example, for subscription/recurring items), TipTok may schedule local
+          notifications on your device. TipTok does not send push notifications from a Service Provider server.
+        </p>
+
+        <h2>Export, import, and sharing</h2>
+        <p>
+          TipTok includes features to export data (for example, CSV exports or a full JSON backup) and import data from
+          files you select. Exported files are saved to your device storage and can be shared using your device’s share
+          features. If you share an exported file, the recipient and any third-party apps you use to share it will
+          receive that file.
+        </p>
+
+        <h2>Does the Application collect precise real-time location information?</h2>
+        <p>
+          TipTok does not collect precise real-time location information from your device.
         </p>
 
         <h2>Do third parties see and/or have access to information obtained by the Application?</h2>
         <p>
-          <strong>Google Sheets:</strong> Your financial data is stored in your own Google Account. Google's privacy
-          policy applies to data stored in Google Drive.
+          TipTok uses third-party services to provide features:
         </p>
+        <ul>
+          <li>
+            <strong>Google</strong> (Google Sign-In, Google Drive API, Google Sheets API) — for optional sync to your
+            Google spreadsheet.
+          </li>
+          <li><strong>Google AdMob</strong> — for advertisements.</li>
+        </ul>
         <p>
-          <strong>Ad Partners:</strong> We work with third-party advertising partners (like Google AdMob) who may access
-          limited data
-          (like device identifiers) to show relevant ads.
+          These third parties process data under their own privacy policies. TipTok does not sell your personal
+          information.
         </p>
+
+        <h2>Data retention (including Google user data)</h2>
+        <ul>
+          <li>
+            <strong>On your device:</strong> Data you enter (transactions, budgets, settings, tip history, etc.) is kept
+            locally until you delete it, clear the Application’s data, or uninstall the Application.
+          </li>
+          <li>
+            <strong>In your Google Account:</strong> If you enable Google Sheets sync, your synced data is retained in
+            your Google Drive/Sheets until you delete the spreadsheet or its contents.
+          </li>
+          <li>
+            <strong>On Service Provider servers:</strong> TipTok does not store your Google Sheets content or your
+            finance records on Service Provider servers.
+          </li>
+        </ul>
+
+        <h2>How to delete your data (including Google user data)</h2>
+        <p>
+          You can delete your data at any time using one or more of the options below:
+        </p>
+        <ul>
+          <li>
+            <strong>Disconnect Google:</strong> Use the in-app “Disconnect” option to revoke TipTok’s access to your
+            Google Account. You can also remove TipTok’s access from your Google Account security settings.
+            Disconnecting stops TipTok from accessing Google APIs, but does not automatically delete the spreadsheet or
+            its contents from your Google Drive.
+          </li>
+          <li>
+            <strong>Delete Google Sheets data:</strong> Delete the TipTok spreadsheet (or specific rows/sheets) from
+            Google Drive/Sheets.
+          </li>
+          <li>
+            <strong>Delete local data:</strong> Delete items from within the app (where available), clear the
+            Application’s data in your device settings, or uninstall the Application.
+          </li>
+          <li>
+            <strong>Delete exported files:</strong> If you exported CSV/JSON backups, delete those files from your
+            device storage and any places you shared them.
+          </li>
+        </ul>
 
         <h2>What are my opt-out rights?</h2>
         <p>
-          You can stop all collection of information by the Application easily by uninstalling it.
-          You may use the standard uninstall processes available as part of your mobile device.
-        </p>
-
-        <h2>Children</h2>
-        <p>
-          The Application is not used to knowingly solicit data from or market to children under the age of 13.
+          You can stop all collection of information by uninstalling the Application. You can also choose not to
+          connect a Google Account and use TipTok only with local device storage.
         </p>
 
         <h2>Security</h2>
         <p>
-          We value your trust in providing us your Personal Information, thus we are striving to use commercially
-          acceptable means of protecting it.
-          Since your financial data is synced directly to Google Sheets, it benefits from Google's security
-          infrastructure.
+          We use commercially reasonable safeguards within the Application. When you use Google Sheets sync, your data
+          is stored in your Google Account and is protected by Google’s security infrastructure. No method of
+          transmission or storage is 100% secure.
+        </p>
+
+        <h2>Children</h2>
+        <p>
+          The Application is not intended for children under the age of 13 and we do not knowingly collect personal
+          information from children.
         </p>
 
         <h2>Changes</h2>
         <p>
-          This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of
-          changes by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy
-          regularly
-          for any changes.
+          This Privacy Policy may be updated from time to time. The Service Provider will notify you of changes by
+          updating this page. You are advised to consult this Privacy Policy regularly for any changes.
         </p>
 
         <h2>Effective date</h2>
-        <p>This privacy policy is effective as of <strong>2026-02-10</strong>.</p>
+        <p>This Privacy Policy is effective as of <strong>2026-03-05</strong>.</p>
 
         <h2>Your Consent</h2>
         <p>
           By using the Application, you are consenting to the processing of your information as set forth in this
-          Privacy Policy now
-          and as amended by the Service Provider.
+          Privacy Policy.
         </p>
 
         <h2>Contact Us</h2>
         <p>
-          If you have any questions regarding privacy while using the Application, or questions about these practices,
-          please contact the Service Provider via email at
-          <a href="mailto:decodoinfo@gmail.com">decodoinfo@gmail.com</a>.
+          If you have any questions about privacy, data retention, or deletion while using the Application, please
+          contact the Service Provider at <a href="mailto:decodoinfo@gmail.com">decodoinfo@gmail.com</a>.
         </p>
 
       </div>
 
       <div class="footer" aria-label="Policy Metadata">
         <span class="pill">App: TipTok</span>
-        <span class="pill">Last updated: 2026-02-10</span>
+        <span class="pill">Last updated: 2026-03-05</span>
       </div>
+
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+        <li><a href="terms_of_service.html">Terms of Service</a></li>
+        <li><a href="mailto:decodoinfo@gmail.com">Support</a></li>
+      </ul>
+      <p class="footer-text">© <span data-year></span> TipTok. All rights reserved.</p>
+      <p class="footer-text">Download TipTok today and start building a healthier financial future.</p>
+    </div>
+  </footer>
 </body>
 
 </html>
